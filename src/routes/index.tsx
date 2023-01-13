@@ -33,7 +33,14 @@ function updateStatus() {
       <div class="loader">
         <div class="circle"></div>
       </div>
+      <div class="status-container">
+
+  <div class="status ">
     <p>{state.statuses[state.statusIndex]}</p>
+  </div>
+</div>
+
+    
     </div>
   );
 });
