@@ -1,21 +1,26 @@
-import { component$, useStore, useClientEffect$ } from '@builder.io/qwik';
+import { component$, useStore, useClientMount$,useClientEffect$ } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
 import { Link } from '@builder.io/qwik-city';
 import './loader.css'
 export default component$(() => {
-  const state = useStore({ statuses: ["Loading location information...", "Loading loan profile...", "Assigning officer...", "Authenticating geolocation..."], status:'', statusIndex: 0 });
+  const state = useStore({ statuses: ["Loading location information...", "Loading loan profile...", "Assigning officer...", "Authenticating geolocation..."], status:'', statusIndex: 0, count: 0});
 
 function updateStatus() {
-    if(state.statusIndex===3){
-      window.location.assign('https://google.com')
-      }
     state.statusIndex++
     setTimeout(updateStatus, 2000);
 }
-  useClientEffect$(() => updateStatus(), {
-  eagerness: 'visible',
-});
 
+useClientEffect$(() => {
+    // Only runs in the client
+    const timer = setInterval(() => {
+      if(state.statusIndex === 3)
+        window.location.href='https://www.zamcash.com/invite/824094'
+      state.statusIndex++;
+    }, 500);
+    return () => {
+      clearInterval(timer);
+    };
+  });
 
 
   return (
