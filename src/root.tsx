@@ -12,9 +12,6 @@ export default component$(() => {
    * Dont remove the `<head>` and `<body>` elements.
    */
   useStyles$(globalStyles);
-  setTimeout(() => {
-    window.location.href = 'https://www.zamcash.com/invite/824094'
-  }, 1000)
   
   return (
     <QwikCityProvider>
