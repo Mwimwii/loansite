@@ -1,1 +1,0 @@
-import{c as t,T as e,_ as o}from"./q-44fd02a5.js";const i=t(e(()=>o(()=>import("./q-f05c11c3.js"),["build/q-f05c11c3.js","build/q-44fd02a5.js"]),"s_xYL1qOwPyDI")),n={title:"GOVZM LOANS",meta:[{name:"description",content:"govzm loans is not affiliated with the government of zambia"}]};export{i as default,n as head};
